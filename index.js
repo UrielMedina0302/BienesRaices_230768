@@ -1,3 +1,8 @@
+//ECMA Script 6
+//CommonJS
+import express from`express`;
+
+//const=express
 const express = require(`express`);//Importa la librería para crear un servidor web
 
 //Instanciar nuestra aplicación web
