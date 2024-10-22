@@ -8,6 +8,7 @@ Para poder demostrar y aprender la creación y consumo de Interfaces de Programa
 |No.|Fecha|Descripción|Potenciador|Estatus|
 |--|--|--|--|--|
 |8.|17/10/2024|Nuevo Repositorio del Proyecto implementado .gitignore|1|⭐Activa|
+|9.|22/10/2024|Creación de una aplicación Web con express|11|⭐Activa|
 
 ### Autor
 **Uriel Abdallah Medina Torres**/[@UrielMedina](https://github.com/UrielMedina0302)
