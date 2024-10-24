@@ -8,8 +8,8 @@ Para poder demostrar y aprender la creación y consumo de Interfaces de Programa
 |No.|Fecha|Descripción|Potenciador|Estatus|
 |--|--|--|--|--|
 |8.	|17/10/2024	|Nuevo Repositorio del proyecto implementando .gitignore	|1	|✅Finalizada|
-|9.	|22/10/2024	|Creación de una Aplicación Web usando Express	|11|	✅Finalizada|
-|10.|23/10/2024	|Operaciones Básicas de un API a través de los verbos HTTP|	12	|⭐Activa|
+|9.	|22/10/2024	|Creación de una Aplicación Web usando Express	|12|	✅Finalizada|
+|10.|23/10/2024	|Operaciones Básicas de un API a través de los verbos HTTP|	12	|	✅Finalizada|
 
 ### Autor
 **Uriel Abdallah Medina Torres**/[@UrielMedina](https://github.com/UrielMedina0302)
