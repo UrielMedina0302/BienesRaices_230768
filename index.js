@@ -14,7 +14,15 @@ app.listen(port,()=>{
     console.log(`La aplicación ha iniciado en el puerto: ${port}`);
 })
 
+//habilitar pug
+app.set('view engine','pug')
+app.set('view', './views')
+app.use('/auth/',userRouters);
 // Probamos las rutas para poder presentar mensajes  al usario a traves del navegador 
 app.use('/',generalRouters);
 // Probamos las rutas para poder presentar mensajes  al usario a traves del navegador 
-app.use('/usuario/',userRouters);
+
+
+
+
+

@@ -31,7 +31,8 @@
   "homepage": "https://github.com/UrielMedina0302/BienesRaices_230768#readme",
   "dependencies": {
     "express": "^4.21.1",
-    "node": "^22.10.0"
+    "node": "^22.10.0",
+    "pug": "^3.0.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
