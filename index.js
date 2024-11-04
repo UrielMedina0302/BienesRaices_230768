@@ -6,8 +6,9 @@ import generalRouters from './Routes/generalRouters.js'
 import userRouters from './Routes/userRouters.js'
 //const=express
 //Instanciar nuestra aplicación web
-const app =express();
-
+const app =express()
+//carpeta publica
+app.use(express.static('./public'));
 //Configuramos nuestro servidor web
 const port =3000;
 app.listen(port,()=>{
