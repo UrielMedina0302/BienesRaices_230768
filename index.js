@@ -17,7 +17,7 @@ app.listen(port,()=>{
 
 //habilitar pug
 app.set('view engine','pug')
-app.set('view', './views')
+app.set('views', './views')
 app.use('/auth/',userRouters);
 // Probamos las rutas para poder presentar mensajes  al usario a traves del navegador 
 app.use('/',generalRouters);
