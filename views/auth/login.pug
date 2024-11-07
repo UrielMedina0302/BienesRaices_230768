@@ -15,6 +15,9 @@ block contenido
                     div 
                         label.block.text-sm.uppercase.text-gray-600.mb-2.font-bold Contraseña  
                         input#password.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "password" value="name" placeholder="Ingresa una contraseña con al menos 8 digitos " name="contraseña_usuario")
+                    div.flex.items-center.justify-between 
+                        a.text-gray-500.text-xs(href="/auth/register" class="hover:underline hover:decoration-2 hover:decoration-red-600") ¿No tienes cuenta? Crea una cuenta 
+                        a.text-gray-500.text-xs(href="/auth/passwordRecovery" class="hover:underline hover:decoration-2 hover:decoration-red-600") Olvide mi contraseña 
                     input(class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 cursor-pointer" type="submit" value="crear cuenta")
       
  
