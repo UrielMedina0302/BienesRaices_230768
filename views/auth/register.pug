@@ -1,27 +1,26 @@
 extends ../layout/index
 block contenido  
-    .py-10 
-        h2.text-center.font-extrabold.my-10.text-4x1.text-indigo-600 Bienes 
-            span.font-normal.text-black Raices 
-        h2.text-center.font-extrabold.text-2x1= page 
-
-        .mt-8.mx-auto.max-w-md 
-            .bg-white.py-8.px-4.shadow
+    div
+    h1.text-center.text-4x1.my-10.font-extrabold.text-dark-cyan Bienes 
+        span.font-normal.text-white Raices
+    h2.text-center.text-tx2= page
+            .mt-8.mx-auto.max-w-md 
+            .bg-spring-green.py-8.px-4.shadow
                 form(action="").space-y-5
                     div 
                         label.block.text-sm.uppercase.text-gray-600.mb-2.font-bold Tu nombre 
-                        input#nombre.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "text" value="name" placeholder="Ingresa tu nombre con apellidos" name="nombre_usuario")
+                        input#nombre.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "text"  placeholder="Ingresa tu nombre con apellidos" name="nombre_usuario")
                     div 
                         label.block.text-sm.uppercase.text-gray-600.mb-2.font-bold Correo Electronico  
-                        input#email.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "email" value="name" placeholder="ej: user@github.com" name="correo_usuario")
+                        input#email.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "email"  placeholder="ej: user@github.com" name="correo_usuario")
                     div 
                         label.block.text-sm.uppercase.text-gray-600.mb-2.font-bold Contraseña  
-                        input#password.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "password" value="name" placeholder="Ingresa una contraseña con al menos 8 digitos " name="contraseña_usuario")
+                        input#password.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "password"  placeholder="Ingresa una contraseña con al menos 8 digitos " name="contraseña_usuario")
                     div 
                         label.block.text-sm.uppercase.text-gray-600.mb-2.font-bold Confirmación contraseña  
-                        input#repeatPass.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "password" value="name" placeholder="Confirma tu contraseña" name="repite_contraseña")
+                        input#repeatPass.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "password" placeholder="Confirma tu contraseña" name="repite_contraseña")
                     div.flex.items-center.justify-between 
-                        a.text-gray-500.text-xs(href="/auth/login" class="hover:underline hover:decoration-2 hover:decoration-red-600") ¿Ya tienes cuenta? Inicia Sesión 
-                        a.text-gray-500.text-xs(href="/auth/passwordRecovery" class="hover:underline hover:decoration-2 hover:decoration-red-600") Olvide mi contraseña 
+                        a.text-gray-500.text-xs(href="/auth/login" class="hover:underline hover:decoration-2 hover:decoration-dark-cyan-100") ¿Ya tienes cuenta? Inicia Sesión 
+                        a.text-gray-500.text-xs(href="/auth/passwordRecovery" class="hover:underline hover:decoration-2 hover:decoration-dark-cyan-100") Olvide mi contraseña 
 
-                    input(class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 cursor-pointer" type="submit" value="crear cuenta")
+                    input(class="w-full bg-dark-cyan-100 hover:bg-dark-cyan-200 text-white font-bold py-3 cursor-pointer" type="submit" value="crear cuenta")
