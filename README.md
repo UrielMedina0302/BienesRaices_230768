@@ -10,6 +10,7 @@ Para poder demostrar y aprender la creación y consumo de Interfaces de Programa
 |8.	|17/10/2024	|Nuevo Repositorio del proyecto implementando .gitignore	|1	|✅Finalizada|
 |9.	|22/10/2024	|Creación de una Aplicación Web usando Express	|12|	✅Finalizada|
 |10.|23/10/2024	|Operaciones Básicas de un API a través de los verbos HTTP|	12	|	✅Finalizada|
+|11.|05/11/2024|Configuración de hojas de estilo utilizando Tailwind|11|✅Finalizada
 
 ### Autor
 **Uriel Abdallah Medina Torres**/[@UrielMedina](https://github.com/UrielMedina0302)
