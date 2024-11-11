@@ -14,4 +14,8 @@ const formularioPasswordRecovery= (req,res)=>{
     res.render('auth/passwordRecovery',{
  page : "Recupera tu contraseña"
     })};
-export {formularioLogin,formularioRegister,formularioPasswordRecovery}
+const createNewUser= (req, res)=>{
+console.log("Registrando a un nuevo usuario.")
+console.log(req.body)
+}
+export {formularioLogin,formularioRegister,formularioPasswordRecovery, createNewUser}
