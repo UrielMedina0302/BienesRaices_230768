@@ -636,6 +636,10 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -678,6 +682,9 @@ video {
 }
 .hover\:decoration-dark-cyan-100:hover {
   text-decoration-color: #379392;
+}
+.hover\:decoration-spring-green:hover {
+  text-decoration-color: #31e981;
 }
 .hover\:decoration-2:hover {
   text-decoration-thickness: 2px;

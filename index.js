@@ -8,6 +8,17 @@ import db from './db/config.js'
 //const=express
 //Instanciar nuestra aplicación web
 const app =express()
+//Conexion a la base de datos
+try
+{
+await db.authenticate();
+db.sync()
+console.log("Conexión exitosa a la base de datos")
+}
+catch(error){
+    console.log(error)
+}
+
 //Habilitamos la lectura de datos desde formularios
 app.use(express.urlencoded({extended: true}))
 //carpeta publica
@@ -25,15 +36,6 @@ app.use('/auth/',userRouters);
 // Probamos las rutas para poder presentar mensajes  al usario a traves del navegador 
 app.use('/',generalRouters);
 // Probamos las rutas para poder presentar mensajes  al usario a traves del navegador 
-try
-{
-await db.authenticate();
-console.log("Conexión exitosa a la base de datos")
-}
-catch(error)
-{
-    console.log(error)
-}
 
 //
 
