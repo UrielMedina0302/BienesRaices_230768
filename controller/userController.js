@@ -1,4 +1,6 @@
-
+import {check, validationResult} from 'express-validator'
+import User from '../models/User.js'
+import { generatetID } from '../helpers/tokens.js'
 
 const formularioLogin = (req,res)=>{
     res.render("auth/login",{
@@ -16,13 +18,19 @@ const formularioPasswordRecovery= (req,res)=>{
     })};
 const createNewUser= async(req, res)=>{
     //Validación de los campos que reciben del formulario
-    await check('nombre_usuario').notEmpty().run(req)
-    let resultado = vaidationResult(req)
+    await check('nombre_usuario').notEmpty().withMessage('El nombre no puede ir vacio').run(req)
+    await check('correo_usuario').isEmail.withMessage('Eso no parece un email').run(req)
+    await check('ontraseña_usuario').isLength({min: 8}).withMessage('La constraseña debe de ser de al menos 8 caracteres').run(req)
+
+    let resultado = validationResult(req)
     res.json(resultado.array());
+
+
+    const user = await User.create(req.body);
     
-console.log("Registrando a un nuevo usuario.")
-console.log(req.body)
-const user = await UserActivation.create(req.body)
-res.json
+    //console.log("Registrando a un nuevo usuario.")
+    console.log(req.body)
+
+    res.json(User)
 }
 export {formularioLogin,formularioRegister,formularioPasswordRecovery, createNewUser}
