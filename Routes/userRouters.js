@@ -1,5 +1,5 @@
 import express from 'express';
-import {formularioLogin,formularioRegister,formularioPasswordRecovery, createNewUser} from '../controller/userController.js';
+import {formularioLogin,formularioRegister,  createNewUser, formularioPasswordRecovery} from '../controller/userController.js';
 const router = express.Router();
 
 //GET

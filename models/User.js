@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize'
 import db from '../db/config.js'
+import bcrypt from 'bcrypt'
 //import { Hooks } from 'sequelize/lib/hooks';
 
 const User = db.define('tbb_users',{
