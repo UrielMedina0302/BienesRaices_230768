@@ -6,19 +6,20 @@ block contenido
     h2.text-center.text-tx2= page
 
     if errors 
-                div(class="max-w-md mx-auto my-10")
-                    each error in errors 
-                        p.bg-red-600.text-white.uppercase.text-xs.text-center.p-2.mb-1.font-bold= error.msg
+        div(class="max-w-md mx-auto my-10")
+            each error in errors 
+                p.bg-red-600.text-white.uppercase.text-xs.text-center.p-2.mb-1.font-bold= error.msg
            
     .mt-8.mx-auto.max-w-md 
         .bg-dark-cyan-100.py-8.px-4.shadow
-             form(method="POST" action="/auth/createNewUser").space-y-5
+            form(method="POST" action="/auth/newUser").space-y-5
+                input(type="hidden" name="_csrf" value= csrfToken)
                 div 
                      label.block.text-sm.uppercase.text-gray-600.mb-2.font-bold Tu nombre 
-                     input#nombre.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "text"  placeholder="Ingresa tu nombre con apellidos" name="nombre_usuario")
+                     input#nombre.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "text"  placeholder="Ingresa tu nombre con apellidos" name="nombre_usuario" value= user? user.name:'')
                 div 
                     label.block.text-sm.uppercase.text-gray-600.mb-2.font-bold Correo Electronico  
-                    input#email.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "email"  placeholder="ej: user@github.com" name="correo_usuario")
+                    input#email.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "email"  placeholder="ej: user@github.com" name="correo_usuario" value= user?user.email:'')
                 div 
                     label.block.text-sm.uppercase.text-gray-600.mb-2.font-bold Contraseña  
                     input#password.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "password"  placeholder="Ingresa una contraseña con al menos 8 digitos " name="contraseña_usuario")
