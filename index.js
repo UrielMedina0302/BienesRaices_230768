@@ -6,7 +6,7 @@ import generalRouters from './Routes/generalRouters.js'
 import userRouters from './Routes/userRouters.js'
 import db from './db/config.js'
 import cookieParser from "cookie-parser";
-import csrf from 'csurf'
+
 import dotenv  from "dotenv"
 
 
@@ -35,9 +35,9 @@ catch(error){
 }
 
 // Habilitar Cookie Parser 
-app.use(cookieParser());
+//app.use(cookieParser());
 // Habilitar CSRF
-app.use(csrf({cookie: true}));
+
 
 //Habilitamos la lectura de datos desde formularios
 app.use(express.urlencoded({extended: true}))

@@ -12,8 +12,8 @@ block contenido
            
     .mt-8.mx-auto.max-w-md 
         .bg-dark-cyan-100.py-8.px-4.shadow
-            form(method="POST" action="/auth/newUser").space-y-5
-                input(type="hidden" name="_csrf" value= csrfToken)
+            form(method="POST" action="/auth/createNewUser" novalidate).space-y-5
+                
                 div 
                      label.block.text-sm.uppercase.text-gray-600.mb-2.font-bold Tu nombre 
                      input#nombre.w-full.px-3.py-2.border-gray-300.rounded-md.placeholder-gray-300(type = "text"  placeholder="Ingresa tu nombre con apellidos" name="nombre_usuario" value= user? user.name:'')

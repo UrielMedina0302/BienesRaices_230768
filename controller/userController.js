@@ -12,7 +12,7 @@ const formularioLogin = (req,res)=>{
 const formularioRegister =(req,res)=>{
     res.render('auth/register',{
         page :"Crea una nueva cuenta",
-        csrfToken: req.csrfToken()
+        
  })};
 
 const createNewUser= async(req, res)=>{
@@ -30,7 +30,7 @@ const createNewUser= async(req, res)=>{
         if(!result.isEmpty()){
             return res.render('auth/register',{
                 page: 'Error al intentar crear la cuenta',
-                csrfToken: req.csrfToken(),
+               
                 errors: result.array(),
                 user:{
                     name: req.body.nombre_usuario,
@@ -53,7 +53,7 @@ const createNewUser= async(req, res)=>{
         if(existingUser){
             return res.render("auth/register",{
                 page: `Error al intentar crear la cuenta de usuario`,
-                csrfToken: req.csrfToken(),
+                
                 errores: [{msg: `El correo ${email} ya se encuentra registrado`}],
                 user:{
                     name: req.body.nombre_usuario,
@@ -81,7 +81,7 @@ const createNewUser= async(req, res)=>{
         })
         
         res.render('templates/message',{
-            csrfToken: req.csrfToken(),
+            
             page: 'cuenta creada Correctamente',
             msg: 'Hemos Enviado un Email de Confirmación, '
         })
@@ -113,7 +113,7 @@ const createNewUser= async(req, res)=>{
             
         }
         userWithToken.token=null;
-        userWithToken.confirmado=true;
+        userWithToken.confirmed=true;
         await userWithToken.save();
     
         res.render('auth/accountConfirmed',{

@@ -38,7 +38,8 @@ router.delete("/deleteUser/:email",function(request,response){
 
 router.get("/login", formularioLogin)
 router.get("/createAccount", formularioRegister)
-router.get("/confirmAccount/:token", Confirm)
+router.post('/createNewUser', createNewUser)
+router.get("/Confirm/:token", Confirm),
 router.get("/passwordRecovery", formularioPasswordRecovery)
 /*router.get("/login", function(req, res){
 
