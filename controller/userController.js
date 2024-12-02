@@ -128,4 +128,127 @@ const createNewUser= async(req, res)=>{
                 page : "Recuperación de Contraseña"
          })};
 
-export {formularioLogin,formularioRegister, createNewUser,Confirm,formularioPasswordRecovery}
+    const passwordReset = async(request, response) =>{
+
+            //console.log("Validando los datos para la recuperación de la contraseña")
+            //Validación de los campos que se reciben del formulario
+            //Validación de Frontend
+            await check('correo_usuario').notEmpty().withMessage("El correo electrónico es un campo obligatorio.").isEmail().withMessage("El correo electrónico no tiene el formato de: usuario@dominio.extesion").run(request)
+            let result = validationResult(request)
+            
+            //Verificamos si hay errores de validacion
+            if(!result.isEmpty())
+            {
+                console.log("Hay errores")
+                return response.render("auth/passwordRecovery", {
+                    page: 'Error al intentar resetear la contraseña',
+                    errors: result.array(),
+                    csrfToken: request.csrfToken()
+                })
+            }
+            
+            //Desestructurar los parametros del request
+            const {correo_usuario:email} = request.body
+    
+            //Validacion de BACKEND
+            //Verificar que el usuario no existe previamente en la bd
+            const existingUser = await User.findOne({ where: { email, confirmed:1}})
+    
+            if(!existingUser)
+            { 
+                
+                return response.render("auth/passwordRecovery", {
+                page: 'Error, no existe una cuenta autentificada asociada al correo electrónico ingresado.',
+                csrfToken: request.csrfToken(),
+                errors: [{msg: `Por favor revisa los datos e intentalo de nuevo` }],
+                user: {
+                    email:email
+                }
+            })
+            }
+                
+                console.log("El usuario si existe en la bd")
+                //Registramos los datos en la base de datos.
+                existingUser.password="";
+                existingUser.token=  generatetId();
+                existingUser.save();
+              
+    
+            //Enviar el correo de confirmación
+            emailChangePassword({
+                name: existingUser.name,
+                email: existingUser.email,
+                token: existingUser.token   
+            })
+    
+    
+            response.render('templates/message', {
+                csrfToken: request.csrfToken(),
+                page: 'Solicitud de actualización de contraseña aceptada',
+                msg: 'Hemos enviado un correo a : <poner el correo aqui>, para la la actualización de tu contraseña.'
+            })
+    
+    
+        }
+    
+    
+        const verifyTokenPasswordChange =async(request, response)=>{
+    
+            const {token} = request.params;
+            const userTokenOwner = await User.findOne({where :{token}})
+    
+            if(!userTokenOwner)
+                { 
+                    response.render('templates/message', {
+                        csrfToken: request.csrfToken(),
+                        page: 'Error',
+                        msg: 'El token ha expirado o no existe.'
+                    })
+                }
+        
+             
+           
+            response.render('auth/reset-password', {
+                csrfToken: request.csrfToken(),
+                page: 'Restablece tu password',
+                msg: 'Por favor ingresa tu nueva contraseña'
+            })
+        }
+    
+        const updatePassword = async(req, res)=>{
+            //validar contraseñas
+            //actualizar la base de datos
+            //Mostramos pagina de respuesta
+            await check("contraseña_usuario").notEmpty().withMessage("La contraseña es un campo obligatorio").isLength({min:8}).withMessage("La contraseña debe ser  de almenos 8 caracteres").run(req)
+            await check("repite_contraseña").equals(req.body.contraseña_usuario).withMessage("la contraseña no coinciden").run(req)
+         
+                 let result= validationResult(req)
+                 let tokenReset=req.params.token
+             
+                 //return res.json
+                 //validación que el resultado este vacío
+                 if(!result.isEmpty()){
+                     return res.render(`auth/`,{
+                         page: 'Error al intentar crear la cuenta',
+                        
+                         errors: result.array(),
+                         user:{
+                             name: req.body.nombre_usuario,
+                             email: req.body.email
+                         }
+                         
+                  })
+                  const userTokenOwner = await User.findOne({where :{token}})
+    
+            if(!userTokenOwner)
+                { 
+                    response.render('templates/message', {
+                        csrfToken: request.csrfToken(),
+                        page: 'Error',
+                        msg: 'El token ha expirado o no existe.'
+                    })
+                }
+        
+        }}
+    
+export {formularioLogin,formularioRegister, createNewUser,Confirm,formularioPasswordRecovery, passwordReset,verifyTokenPasswordChange, updatePassword}
