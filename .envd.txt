@@ -1,0 +1,14 @@
+#-----Mysql------#
+DB_DOMAIN=localhost
+BD_PORT=3307
+BD_NAME=bienes_raices_230768
+BD_USER=Uriel.Medina
+BD_PASS=pass123456
+#----------Mailtrap-----------#
+EMAIL_HOST=sandbox.smtp.mailtrap.io
+EMAIL_PORT=2525
+EMAIL_USER=eab8edc086f812
+EMAIL_PASS=********0ce3
+#---------express------------#
+BACKEND_DOMAIN=3000
+BACKEND_PORT=http://localhost
