@@ -9,5 +9,5 @@ EMAIL_PORT=2525
 EMAIL_USER=eab8edc086f812
 EMAIL_PASS=f4b72c2d4e0ce3
 #---------express------------#
-BACKEND_DOMAIN=3000
-BACKEND_PORT=http://localhost
+BACKEND_DOMAIN=http://localhost
+BACKEND_PORT=3000

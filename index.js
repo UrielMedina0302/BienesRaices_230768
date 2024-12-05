@@ -5,7 +5,7 @@ import express from "express";
 import generalRouters from './Routes/generalRouters.js'
 import userRouters from './Routes/userRouters.js'
 import db from './db/config.js'
-import cookieParser from "cookie-parser";
+
 
 import dotenv  from "dotenv"
 
