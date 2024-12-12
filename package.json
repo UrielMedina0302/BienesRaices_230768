@@ -1,7 +1,7 @@
 {
   "name": "mx.edu.utxj.ti.awos.bienes-raices",
   "version": "1.0.0",
-  "description": "Proyecto de Clase para la Unidad2, de la asignatura AWOS utilizando Node.js",
+  "description": "Proyecto de clase para la Unidad 2 de la asignatura AWOS, utilizando Node.js",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UrielMedina0302/BienesRaices_230768.git"
+    "url": "git+https://github.com/ZyanZac/Bienes_Raices_230852.git"
   },
   "keywords": [
     "MVC",
@@ -24,21 +24,20 @@
     "Mailtrap",
     "JWT"
   ],
-  "author": "Uriel Abdallah Medina Torres",
+  "author": "Zyanya Ahuachtli Zacatenco Pedroza",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/UrielMedina0302/BienesRaices_230768/issues"
+    "url": "https://github.com/ZyanZac/Bienes_Raices_230852/issues"
   },
-  "homepage": "https://github.com/UrielMedina0302/BienesRaices_230768#readme",
+  "homepage": "https://github.com/ZyanZac/Bienes_Raices_230852#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",
-    
+    "csurf": "^1.10.0",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "express-validator": "^7.2.0",
     "mysql2": "^3.11.4",
-    "node": "^22.10.0",
     "nodemailer": "^6.9.16",
     "pug": "^3.0.3",
     "sequelize": "^6.37.5"
@@ -46,9 +45,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "nodemon": "^3.1.7",
-    "postcss": "^8.4.47",
+    "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
-    "tailwind": "^4.0.0",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.15"
   }
 }
