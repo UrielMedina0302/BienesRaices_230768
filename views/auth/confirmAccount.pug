@@ -1,0 +1,16 @@
+extends ../layout/index
+
+block contenido 
+    .py-10 
+        h1.text-center.text-4xl.my-10.font-extrabold.text-dark-cyan-100 Bienes 
+            span.font-normal.text-white Raices
+        h2.text-center.font-extrabold.text-2xl.font-mono=page
+
+    div(class="bg-dark-cyan-100 shadow py-8 px-4 rounded-lg max-w-md mx-auto ")
+        p( class= error ? 'bg-cute_purple-100' : 'bg-cute_purple-200' ).py-2.py-5.rounded-lg.w-full.font-bold.text-center.text-white.uppercase=msg
+
+        if !error
+            a(href="/auth/login" class="text-center text-sm text-slate-600 uppercase mt-10 block w-full bg-spring-green hover:bg-dark-cyan-200 text-white font-bold py-3 cursor-pointer") Ya puedes iniciar sesión 
+
+        if error 
+            a(href="/auth/createAccount" class="text-center font-bold text-sm text-slate-600 uppercase mt-10 block w-full bg-spring-green hover:bg-dark-cyan-200 text-white py-3 cursor-pointer") Registrarse.
